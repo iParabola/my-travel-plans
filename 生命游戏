@@ -210,3 +210,33 @@ void update(int k)
 				}
 			}
 }
+
+
+int main()
+{
+	int i, j, k, count;
+	srand(time(NULL));
+	for (i = 0;i <  N ;i++)
+		for (j = 0 ;j <  N ;j++)
+			a[i][j][0] = rand() %2;
+	/*cout << "随机初始生命细胞状态为" << endl << "--------------------------------------------------------------------" << endl;
+	for (i = 0;i < N;i++)
+	{
+		for (j = 0;j < N;j++)
+		{
+			if (a[i][j][0] == 0)
+				cout << "⊙";
+			else
+				a[i][j][0] = 1;
+				cout << "  ";
+		}
+		cout << endl;
+	}*/
+	for (i = 0;i < GEN;i++)
+	{
+		show(i);
+		update(i);
+	}
+	system("pause");
+	return 0;
+}
